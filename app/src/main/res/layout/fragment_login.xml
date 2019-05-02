@@ -12,8 +12,50 @@
         android:layout_margin="45dp"
         android:background="#ffffff"
         android:orientation="vertical"
-        android:padding="15dp">
+        android:padding="15dp"
+        android:gravity="center">
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Login"
+            android:textSize="35dp"
+            android:textColor="#000000"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Email"
+            android:textSize="20dp"
+            android:layout_marginTop="15dp"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableBottom="@android:color/holo_blue_bright"
+            android:id="@+id/loginemail"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Password"
+            android:textSize="20dp"
+            android:layout_marginTop="15dp"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableBottom="@android:color/holo_blue_bright"
+            android:inputType="textPassword"
+            android:id="@+id/loginpassword"/>
+
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:text="login"
+            android:background="@drawable/bg"
+            android:layout_gravity="center"
+            android:textColor="#ffff"
+            android:textStyle="bold"
+            android:layout_marginTop="15dp"
+            android:id="@+id/btnlogin"/>
     </LinearLayout>
 
 </FrameLayout>
