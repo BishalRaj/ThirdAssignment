@@ -1,6 +1,7 @@
 package com.example.thirdassignment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -35,33 +36,39 @@ public class LoginFragment extends Fragment {
             preferences=this.getActivity().getSharedPreferences("APP_PREF", Context.MODE_PRIVATE);
             editor=preferences.edit();
 
-                un=preferences.getString("email","");
-                pw=preferences.getString("password","");
-
-        System.out.println(un +" "+pw);
 
             btnlogin.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if(TextUtils.isEmpty(loginemail.getText().toString())){
-                        Toast.makeText(getActivity(), "Email cannot be empty", Toast.LENGTH_SHORT).show();
-                        loginemail.setText("");
-                        loginpassword.setText("");
-                    }else if(TextUtils.isEmpty(loginpassword.getText().toString())){
-                        Toast.makeText(getActivity(), "Password cannot be empty", Toast.LENGTH_SHORT).show();
-                        loginpassword.setText("");
-                    }else{
 
-                        if (un.equals(loginemail.getText().toString())
-                                && pw.equals(loginpassword.getText().toString())){
-                            Toast.makeText(getActivity(), "Login Successful", Toast.LENGTH_SHORT).show();
-                        }else{
-                            Toast.makeText(getActivity(), "Authentication Error", Toast.LENGTH_SHORT).show();
-                            loginemail.setText("");
-                            loginpassword.setText("");
-                        }
+                    Intent intent=new Intent(getActivity(),Items.class);
+                    startActivity(intent);
 
-                    }
+//                    un=preferences.getString("email","");
+//                    pw=preferences.getString("password","");
+//
+//                    System.out.println(un +" "+pw);
+//
+//
+//                    if(TextUtils.isEmpty(loginemail.getText().toString())){
+//                        Toast.makeText(getActivity(), "Email cannot be empty", Toast.LENGTH_SHORT).show();
+//                        loginemail.setText("");
+//                        loginpassword.setText("");
+//                    }else if(TextUtils.isEmpty(loginpassword.getText().toString())){
+//                        Toast.makeText(getActivity(), "Password cannot be empty", Toast.LENGTH_SHORT).show();
+//                        loginpassword.setText("");
+//                    }else{
+//
+//                        if (un.equals(loginemail.getText().toString())
+//                                && pw.equals(loginpassword.getText().toString())){
+//                            Toast.makeText(getActivity(), "Login Successful", Toast.LENGTH_SHORT).show();
+//                        }else{
+//                            Toast.makeText(getActivity(), "Authentication Error", Toast.LENGTH_SHORT).show();
+//                            loginemail.setText("");
+//                            loginpassword.setText("");
+//                        }
+//
+//                    }
                     
                 }
             });
