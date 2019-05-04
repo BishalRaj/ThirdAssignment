@@ -23,7 +23,10 @@ public class Items extends AppCompatActivity {
     }
 
     private void getList(){
-        itemsModelList.add(new ItemsModel("Shoe","lalalalalala",R.drawable.bg,"50"));
+        itemsModelList.add(new ItemsModel("Cap","lalalalalala",R.drawable.topi,"50"));
+        itemsModelList.add(new ItemsModel("Daura","lalalalalala",R.drawable.daura,"50"));
+        itemsModelList.add(new ItemsModel("Saluwar","lalalalalala",R.drawable.suruwal,"50"));
+        itemsModelList.add(new ItemsModel("Shoe","lalalalalala",R.drawable.shoe,"50"));
     }
 
 }

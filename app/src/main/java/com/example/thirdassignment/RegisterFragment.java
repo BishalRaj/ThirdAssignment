@@ -33,9 +33,10 @@ public class RegisterFragment extends Fragment {
         password=view.findViewById(R.id.email);
         btnregister=view.findViewById(R.id.btnregister);
 
-        preferences=this.getActivity().getSharedPreferences("APP_PRED", Context.MODE_PRIVATE);
+        preferences=getContext().getSharedPreferences("APP_PREF", Context.MODE_PRIVATE);
         editor=preferences.edit();
 
+        Toast.makeText(getActivity(), preferences.getString("EMAIL",""), Toast.LENGTH_SHORT).show();
 
         btnregister.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,14 +55,14 @@ public class RegisterFragment extends Fragment {
                 }else if (pwd.isEmpty()){
                     Toast.makeText(getActivity(), "Password cannot be empty", Toast.LENGTH_SHORT).show();
                 }else{
-                    editor.putString("firstName",fn);
-                    editor.putString("lastName",ln);
-                    editor.putString("email",em);
-                    editor.putString("password",pwd);
+                    editor.putString("FIRSTNAME",fn);
+                    editor.putString("LASTNAME",ln);
+                    editor.putString("EMAIL",em);
+                    editor.putString("PASSWORD",pwd);
                     editor.commit();
 
-//                    Toast.makeText(getActivity(), preferences.getString("email",""), Toast.LENGTH_SHORT).show();
-                    Toast.makeText(getActivity(), "You are successfully registered.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), preferences.getString("EMAIL",""), Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(getActivity(), "You are successfully registered.", Toast.LENGTH_SHORT).show();
                 }
 
 

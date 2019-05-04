@@ -33,7 +33,7 @@ public class LoginFragment extends Fragment {
             loginpassword=view.findViewById(R.id.loginpassword);
             btnlogin=view.findViewById(R.id.btnlogin);
             //add if remember me is checked or not..if checked do direct login...else need to login
-            preferences=this.getActivity().getSharedPreferences("APP_PREF", Context.MODE_PRIVATE);
+            preferences=getContext().getSharedPreferences("APP_PREF", Context.MODE_PRIVATE);
             editor=preferences.edit();
 
 
@@ -41,34 +41,39 @@ public class LoginFragment extends Fragment {
                 @Override
                 public void onClick(View v) {
 
-                    Intent intent=new Intent(getActivity(),Items.class);
-                    startActivity(intent);
+                    un=preferences.getString("EMAIL","");
+                    pw=preferences.getString("PASSWORD","");
 
-//                    un=preferences.getString("email","");
-//                    pw=preferences.getString("password","");
-//
-//                    System.out.println(un +" "+pw);
-//
-//
-//                    if(TextUtils.isEmpty(loginemail.getText().toString())){
-//                        Toast.makeText(getActivity(), "Email cannot be empty", Toast.LENGTH_SHORT).show();
-//                        loginemail.setText("");
-//                        loginpassword.setText("");
-//                    }else if(TextUtils.isEmpty(loginpassword.getText().toString())){
-//                        Toast.makeText(getActivity(), "Password cannot be empty", Toast.LENGTH_SHORT).show();
-//                        loginpassword.setText("");
-//                    }else{
-//
-//                        if (un.equals(loginemail.getText().toString())
-//                                && pw.equals(loginpassword.getText().toString())){
-//                            Toast.makeText(getActivity(), "Login Successful", Toast.LENGTH_SHORT).show();
-//                        }else{
-//                            Toast.makeText(getActivity(), "Authentication Error", Toast.LENGTH_SHORT).show();
-//                            loginemail.setText("");
-//                            loginpassword.setText("");
+
+
+                    if(TextUtils.isEmpty(loginemail.getText().toString())){
+                        Toast.makeText(getActivity(), "Email cannot be empty", Toast.LENGTH_SHORT).show();
+                        loginemail.setText("");
+                        loginpassword.setText("");
+                    }else if(TextUtils.isEmpty(loginpassword.getText().toString())){
+                        Toast.makeText(getActivity(), "Password cannot be empty", Toast.LENGTH_SHORT).show();
+                        loginpassword.setText("");
+                    }else{
+
+                        if (un.equals(loginemail.getText().toString())
+                                && pw.equals(loginpassword.getText().toString())){
+                            Toast.makeText(getActivity(), "Login Successful", Toast.LENGTH_SHORT).show();
+                            Intent intent=new Intent(getActivity(),Items.class);
+                            startActivity(intent);
+                        }
+//                        else  if (un.trim().length()<=0&&pw.trim().length()<=0){
+//                            Toast.makeText(getActivity(), "No data found", Toast.LENGTH_SHORT).show();
 //                        }
-//
-//                    }
+                        else{
+                            Toast.makeText(getActivity(), "Authentication Error", Toast.LENGTH_SHORT).show();
+                            loginemail.setText("");
+                            loginpassword.setText("");
+                        }
+
+
+
+
+                    }
                     
                 }
             });

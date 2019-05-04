@@ -30,9 +30,9 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemsViewHol
     @Override
     public void onBindViewHolder(@NonNull ItemsViewHolder itemsViewHolder, int i) {
         final ItemsModel itemsModel=itemsModelList.get(i);
-        itemsViewHolder.itemName.setText(itemsModel.getItemName());
-        itemsViewHolder.itemDescription.setText(itemsModel.getItemDescription());
-        itemsViewHolder.itemPrice.setText(itemsModel.getItemPrice());
+//        itemsViewHolder.itemName.setText(itemsModel.getItemName());
+//        itemsViewHolder.itemDescription.setText(itemsModel.getItemDescription());
+//        itemsViewHolder.itemPrice.setText(itemsModel.getItemPrice());
         itemsViewHolder.itemImageName.setImageResource(itemsModel.getItemImageName());
     }
 
