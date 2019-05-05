@@ -3,10 +3,10 @@ package com.example.thirdassignment;
 public class ItemsModel {
     private String itemName;
     private String itemDescription;
-    private int itemImageName;
+    private String itemImageName;
     private String itemPrice;
 
-    public ItemsModel(String itemName, String itemDescription, int itemImageName, String itemPrice) {
+    public ItemsModel(String itemName, String itemDescription, String itemImageName, String itemPrice) {
         this.itemName = itemName;
         this.itemDescription = itemDescription;
         this.itemImageName = itemImageName;
@@ -29,11 +29,11 @@ public class ItemsModel {
         this.itemDescription = itemDescription;
     }
 
-    public int getItemImageName() {
+    public String getItemImageName() {
         return itemImageName;
     }
 
-    public void setItemImageName(int itemImageName) {
+    public void setItemImageName(String itemImageName) {
         this.itemImageName = itemImageName;
     }
 

@@ -29,8 +29,8 @@ public class RegisterFragment extends Fragment {
 
         firstname=view.findViewById(R.id.firstname);
         lastname=view.findViewById(R.id.lastname);
-        email=view.findViewById(R.id.password);
-        password=view.findViewById(R.id.email);
+        email=view.findViewById(R.id.email);
+        password=view.findViewById(R.id.password);
         btnregister=view.findViewById(R.id.btnregister);
 
         preferences=getContext().getSharedPreferences("APP_PREF", Context.MODE_PRIVATE);
