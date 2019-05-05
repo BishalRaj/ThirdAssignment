@@ -36,8 +36,6 @@ public class RegisterFragment extends Fragment {
         preferences=getContext().getSharedPreferences("APP_PREF", Context.MODE_PRIVATE);
         editor=preferences.edit();
 
-        Toast.makeText(getActivity(), preferences.getString("EMAIL",""), Toast.LENGTH_SHORT).show();
-
         btnregister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -61,15 +59,10 @@ public class RegisterFragment extends Fragment {
                     editor.putString("PASSWORD",pwd);
                     editor.commit();
 
-                    Toast.makeText(getActivity(), preferences.getString("EMAIL",""), Toast.LENGTH_SHORT).show();
-//                    Toast.makeText(getActivity(), "You are successfully registered.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "You are successfully registered.", Toast.LENGTH_SHORT).show();
                 }
-
-
             }
         });
-
-
 
         return view;
     }
