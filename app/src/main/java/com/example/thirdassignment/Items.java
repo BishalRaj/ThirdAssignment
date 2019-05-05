@@ -53,7 +53,7 @@ public class Items extends AppCompatActivity {
                 String[] parts = line.split("->");
                 String img = parts[3];
                 int res = getResources().getIdentifier(img, "drawable", getPackageName());
-                itemsModelList.add(new ItemsModel(parts[0],parts[3],res,parts[2]));
+                itemsModelList.add(new ItemsModel(parts[0],parts[2],res,parts[1]));
 //                itemsModelList.add(new ItemsModel(parts[0], parts[1], res, parts[2]));
             }
 

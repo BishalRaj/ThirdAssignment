@@ -37,10 +37,11 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemsViewHol
             public void onClick(View v) {
 
                 Intent intent = new Intent(context, ItemDisplay.class);
-                intent.putExtra("image", itemsModel.getItemImageName());
+
                 intent.putExtra("name", itemsModel.getItemName());
-                intent.putExtra("price", itemsModel.getItemPrice());
                 intent.putExtra("desc", itemsModel.getItemDescription());
+                intent.putExtra("image", itemsModel.getItemImageName());
+                intent.putExtra("price", itemsModel.getItemPrice());
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(intent);
             }
